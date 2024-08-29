@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: center;
+            color: #555;
+        }
+        .api-section {
+            margin-top: 20px;
+        }
+        .api-section h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .api-section pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Web API</h1>
+        <p>This is a custom web API server built with Node.js and Express.</p>
+
+        <div class="api-section">
+            <h2>Available Endpoints:</h2>
+            <pre>
+GET /api/users - Retrieve list of users
+POST /api/users - Create a new user
+GET /api/users/:id - Retrieve a specific user by ID
+PUT /api/users/:id - Update a user by ID
+DELETE /api/users/:id - Delete a user by ID
+            </pre>
+        </div>
+
+        <div class="api-section">
+            <h2>How to Use:</h2>
+            <p>You can use tools like <a href="https://www.postman.com/" target="_blank">Postman</a> or <a href="https://www.insomnia.rest/" target="_blank">Insomnia</a> to test these API endpoints.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,14 +19,28 @@ mongoose.connect(process.env.DATABASE_URL)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-app.use('/api/users', userRoutes);
-app.use('/api/admins', adminRoutes);
-app.use('/api/tests', testRoutes);
-app.use('/api/learningMaterials', learningMaterialRoutes);
-app.use('/api/questionBanks', questionBankRoutes);
-app.use('/api/testSchedules', testScheduleRoutes);
-app.use('/api/testResults', testResultRoutes);
-app.use('/api/reports', reportRoutes);
+app.use('/users', userRoutes);
+app.use('/admins', adminRoutes);
+app.use('/tests', testRoutes);
+app.use('/learningMaterials', learningMaterialRoutes);
+app.use('/questionBanks', questionBankRoutes);
+app.use('/testSchedules', testScheduleRoutes);
+app.use('/testResults', testResultRoutes);
+app.use('/reports', reportRoutes);
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Server running on port ${port}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server berjalan di http://localhost:${PORT}`);
+});
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// app.set('view engine', 'ejs');
+
+// app.get('/', (req, res) => {
+//   res.render('index', { title: 'Welcome to My Server' });
+// });
